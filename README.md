@@ -1,3 +1,33 @@
+Performance regression.
+
+My workload:
+```
+mip version    runtime
+1.8.2          7.6
+1.9.0          9
+1.9.1          8.6
+1.9.2          8.9
+1.10.0         9.25
+1.11.0         9.5
+```
+
+Somewhere between 1.8.2 and 1.9.0 a change was made that introduced a performance
+regression.
+1.9.0 release notes:
+```
+- The conflict graph of a MIP, indicading conflicting assignments for binary variables, can now be queried
+- Initial (optional) support for numpy tensors
+- Compatibility fixes for the MacOS binaries
+- Speedup for querying solutions in the callbacks
+- Documentation improvements
+```
+
+Suspect commits?
+
+- https://github.com/coin-or/python-mip/commit/e40444e865c4bc886d93fca7f43dd00083cad8c5
+  - nah
+
+
 # Python MIP (Mixed-Integer Linear Programming) Tools
 
 Package website: **http://python-mip.com**
